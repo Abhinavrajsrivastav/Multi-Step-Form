@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&display=swap');
+
+
+.welcome-peer-container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+}
+
+.background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.background img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    background: cover/no-repeat/center center;
+}
+
+
+
+.description-container {
+  width: 30%;
+  padding:  30px 20px;
+  background-color: rgba(240, 101, 238, 0.884);
+  text-align: center;
+  box-shadow: 0 0 10px 0 rgba(252, 50, 232, 0.874);
+  border-radius: 12px;
+  color: white;
+  font-family: "Kalam", cursive;
+  font-weight: 800;
+  font-style: normal;
+}
+
+.description-container h2 {
+  font-size: 24px;
+}
+.description-container p{
+    line-height: 2.5;
+    font-family: "Kalam", cursive;
+    font-weight: 800;
+    font-style: normal;
+    font-size: 1.3rem;
+}
+
+.welcome-container{
+    position: relative;
+    top: 5%;
+    left: 0%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    padding: 20px;
+    margin: 0;
+}
+
+.court-section {
+  padding:   60px 30px;
+  width: 50%;
+  background-color: rgba(50, 155, 242, 0.7);
+  text-align: start;
+  color: white;
+  font-size: 12px;
+  line-height: 1.2;
+  box-shadow: 0 0 10px 0 rgba(8, 140, 240, 0.98);
+  font-family: "Kalam", cursive;
+  font-weight: 800;
+  font-style: normal;
+}
+
+.btn{
+    position: relative;
+    top: 10px;
+    padding: 10px 20px;
+    background-color: #3a47fa;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-family: "Kalam", cursive;
+    font-weight: 700;
+    font-style: normal;
+    cursor: pointer;
+    text-decoration: none;
+}
+

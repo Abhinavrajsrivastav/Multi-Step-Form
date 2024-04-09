@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&display=swap');
+
+.annafar-container {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 20px;
+  background-color: #515fffe0;
+  box-shadow: 0 0 50px 0 rgba(22, 84, 255, 0.812);
+  margin: 0;
+  color: white;
+}
+
+.logo-container {
+  flex: 1;
+}
+
+.brand-logo {
+  width: 150px;
+  height: auto;
+}
+
+.links-container {
+  flex: 2;
+  display: flex;
+  justify-content: flex-end;
+  position: relative;
+  right: 20px;
+}
+
+.link {
+  color: white;
+  margin-left: 20px;
+  text-decoration: none;
+  font-weight: bold;
+  font-family: "Kalam", cursive;
+  font-weight: 600;
+  font-style: normal;
+  font: 20px;
+}
+
+.link:hover {
+  color: #ffffff;
+}
