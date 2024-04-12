@@ -1,13 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import './Quiz.css'; // Import CSS file for styling
 import Questions from '../Data/Questions'; // Import questions array
-import { Link } from 'react-router-dom'; // Import Link for routing
+import { useNavigate } from 'react-router-dom'; // Import Link for routing
 
 const Quiz = () => {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [selectedOption, setSelectedOption] = useState(null);
   const [score, setScore] = useState(0);
   const [quizCompleted, setQuizCompleted] = useState(false);
+
+  const navigate = useNavigate();
 
   const questions = Questions();
 
@@ -20,6 +22,7 @@ const Quiz = () => {
     if (selectedOption === correctAnswer) {
       setScore(score + 1);
     }
+    setSelectedOption(null); // Clear selected option for the next question
     setCurrentQuestion(currentQuestion + 1);
   };
 
@@ -30,7 +33,12 @@ const Quiz = () => {
   }, [currentQuestion, questions.length]);
 
   const handleSubmit = () => {
-    console.log(score);
+    if (selectedOption !== null) {
+      navigate('/FeedBack', { state:{ Score: score, TotalQuestions: questions.length }});
+      console.log(score);
+    } else {
+      alert("Please select an option before submitting.");
+    }
   };
 
   return (
@@ -52,11 +60,10 @@ const Quiz = () => {
         ))}
       </div>
       <div className="buttons-container">
-        {currentQuestion === questions.length-1 && (
-          <Link to={{
-            pathname: "/FeedBack",
-            state: { score: score, totalQuestions: questions.length }
-          }} className="button" onClick={handleSubmit} >Submit</Link>
+        {currentQuestion === questions.length - 1 && (
+          <button  className="button" onClick={handleSubmit}>
+            Submit
+          </button>
         )}
         {currentQuestion < questions.length - 1 && (
           <button className="button" onClick={handleNextQuestion}>Next</button>
